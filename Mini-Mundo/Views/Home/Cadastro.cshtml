@@ -31,6 +31,13 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Eu concordo com os <a asp-area="" asp-controller="Home" asp-action="Privacy">Termos de Serviço e Privacidade</a></label>
         </div>
-        <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
+        <div class="d-flex justify-content-between">
+            <div>
+                <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
+            </div>
+            <div class="align-self-center">
+                <a asp-area="" asp-controller="Home" asp-action="Index">Voltar</a>
+            </div>
+        </div>
     </form>
 </div>

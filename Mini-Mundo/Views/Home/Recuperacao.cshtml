@@ -15,9 +15,13 @@
             <input type="email" class="form-control" id="floatingInput" placeholder="joao@gmail.com">
             <label for="floatingInput">Email</label>
         </div>
-        <div class="text-end fs-6">
-            <a asp-area="" asp-controller="Home" asp-action="Index">Voltar</a>
+        <div class="d-flex justify-content-between">
+            <div>
+                <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
+            </div>
+            <div class="align-self-center">
+                <a asp-area="" asp-controller="Home" asp-action="Index">Voltar</a>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary mt-2">Enviar</button>
     </form>
 </div>

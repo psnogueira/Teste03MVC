@@ -21,12 +21,14 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Lembrar de mim</label>
         </div>
-        <div class="text-end fs-6">
-            <a asp-area="" asp-controller="Home" asp-action="Recuperacao">Esqueci minha senha</a>
+        <div class="d-flex justify-content-between">
+            <div>
+                <button type="submit" class="btn btn-primary mt-2">Entrar</button>
+            </div>
+            <div class="align-self-center">
+                <a asp-area="" asp-controller="Home" asp-action="Recuperacao">Esqueci minha senha</a> |
+                <a asp-area="" asp-controller="Home" asp-action="Cadastro">Cadastrar-se</a>
+            </div>
         </div>
-        <div class="text-end fs-6">
-            <a asp-area="" asp-controller="Home" asp-action="Cadastro">Cadastrar-se</a>
-        </div>
-        <button type="submit" class="btn btn-primary mt-2">Entrar</button>
     </form>
 </div>
