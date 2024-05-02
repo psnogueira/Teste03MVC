@@ -22,6 +22,78 @@ namespace Mini_Mundo.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Mini_Mundo.Models.Cargo", b =>
+                {
+                    b.Property<int>("CargoID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CargoID"));
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<decimal>("SalarioMaximo")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("SalarioMinimo")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("CargoID");
+
+                    b.ToTable("Cargo");
+                });
+
+            modelBuilder.Entity("Mini_Mundo.Models.Cliente", b =>
+                {
+                    b.Property<int>("ClienteID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ClienteID"));
+
+                    b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Endereco")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("PrimeiroNome")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
+
+                    b.Property<string>("UltimoNome")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("ClienteID");
+
+                    b.ToTable("Cliente");
+                });
+
             modelBuilder.Entity("Mini_Mundo.Models.Funcionario", b =>
                 {
                     b.Property<int>("FuncionarioID")
@@ -30,7 +102,7 @@ namespace Mini_Mundo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FuncionarioID"));
 
-                    b.Property<string>("Cargo")
+                    b.Property<string>("CargoID")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -57,6 +129,55 @@ namespace Mini_Mundo.Migrations
                     b.HasKey("FuncionarioID");
 
                     b.ToTable("Funcionario");
+                });
+
+            modelBuilder.Entity("Mini_Mundo.Models.Login", b =>
+                {
+                    b.Property<int>("LoginID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LoginID"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("NivelDeAcessoID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Usuario")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("LoginID");
+
+                    b.ToTable("Login");
+                });
+
+            modelBuilder.Entity("Mini_Mundo.Models.NivelDeAcesso", b =>
+                {
+                    b.Property<int>("NivelDeAcessoID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NivelDeAcessoID"));
+
+                    b.Property<string>("NomeNivel")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("NivelDeAcessoID");
+
+                    b.ToTable("NivelDeAcesso");
                 });
 
             modelBuilder.Entity("Mini_Mundo.Models.Produto", b =>
@@ -86,6 +207,36 @@ namespace Mini_Mundo.Migrations
                     b.HasKey("ProdutoID");
 
                     b.ToTable("Produto");
+                });
+
+            modelBuilder.Entity("Mini_Mundo.Models.Venda", b =>
+                {
+                    b.Property<int>("VendaID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VendaID"));
+
+                    b.Property<int>("ClienteID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DataVenda")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("FuncionarioID")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("ValorTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("VendaID");
+
+                    b.ToTable("Venda");
                 });
 #pragma warning restore 612, 618
         }

@@ -16,5 +16,10 @@ namespace Mini_Mundo.Data
 
         public DbSet<Mini_Mundo.Models.Produto> Produto { get; set; } = default!;
         public DbSet<Mini_Mundo.Models.Funcionario> Funcionario { get; set; } = default!;
+        public DbSet<Mini_Mundo.Models.Cliente> Cliente { get; set; } = default!;
+        public DbSet<Mini_Mundo.Models.Cargo> Cargo { get; set; } = default!;
+        public DbSet<Mini_Mundo.Models.Login> Login { get; set; } = default!;
+        public DbSet<Mini_Mundo.Models.NivelDeAcesso> NivelDeAcesso { get; set; } = default!;
+        public DbSet<Mini_Mundo.Models.Venda> Venda { get; set; } = default!;
     }
 }

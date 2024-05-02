@@ -23,6 +23,16 @@ namespace Mini_Mundo.Controllers
             return View();
         }
 
+        public IActionResult Cadastro()
+        {
+            return View();
+        }
+
+        public IActionResult Recuperacao()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

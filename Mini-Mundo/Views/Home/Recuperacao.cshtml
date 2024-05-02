@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="text-center">
+    <h2 class="display-4">Recuperar sua senha</h2>
+    <p>Insira o endereço de email associado a sua conta.</p>
+</div>
+
+<div class="d-flex justify-content-center container mt-5">
+    <form class="w-50 displa">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="joao@gmail.com">
+            <label for="floatingInput">Email</label>
+        </div>
+        <div class="text-end fs-6">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Voltar</a>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Enviar</button>
+    </form>
+</div>
