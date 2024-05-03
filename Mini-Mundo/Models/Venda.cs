@@ -21,7 +21,7 @@ namespace Mini_Mundo.Models
         [Range(0.01, double.MaxValue, ErrorMessage = "O Valor da venda deve ser um valor positivo.")]
         public decimal ValorTotal { get; set; }
 
-        [Display(Name = "ID do funcionário que realizou a venda")]
+        [Display(Name = "ID do colaborador que realizou a venda")]
         [Required(ErrorMessage = "O ID do funcionário que realizou a venda é obrigatório.")]
         public int FuncionarioID { get; set; }
 
